@@ -1,5 +1,5 @@
 .DS_Store
-/.vagrant/
-/ssh/
-!/ssh/bashrc
-!/ssh/README.md
+.vagrant/
+ssh/
+!ssh/bashrc
+!ssh/README.md
