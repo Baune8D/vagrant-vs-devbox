@@ -25,7 +25,7 @@ Provisioning can take many hours, be patient.
 
 ## **Information:**
 This is built for use with a Packer Windows 10 base image.  
-Packer setup repository: [Bitbucket link](https://bitbucket.org/saxis/packer-win10-basedisk)  
+Packer setup repository: [GitHub link](https://github.com/baunegaard/packer-win10-basedisk)  
 A pre-build default box will be downloaded on first run.
 
 Default hypervisor settings are: 2 CPU's and 6144 MB memory.  
