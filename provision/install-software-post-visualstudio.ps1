@@ -11,6 +11,5 @@ cinst dottrace
 cinst dotmemory
 # Free
 cinst dotpeek
-cinst teamcityaddin
 
 choco feature disable -n=allowGlobalConfirmation

@@ -8,10 +8,10 @@ cinst ARRv3_0 --source webpi
 # ---- Applications ----
 cinst git
 cinst python2
+cinst ruby
 cinst nodejs
 cinst nuget.commandline
 cinst 7zip
-cinst p4merge
 cinst firefox -packageParameters "l=en-US"
 cinst googlechrome
 cinst notepadplusplus
@@ -22,6 +22,5 @@ cinst putty.install
 cinst winscp
 cinst sourcetree
 cinst redis-64
-cinst ruby
 
 choco feature disable -n=allowGlobalConfirmation
