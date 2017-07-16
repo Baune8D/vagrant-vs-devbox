@@ -61,7 +61,6 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "provision/install-windowsfeatures.ps1"
     config.vm.provision :reload
     config.vm.provision "shell", path: "provision/install-software.ps1"
-	config.vm.provision "shell", path: "provision/install-rubygems.bat"
     config.vm.provision :reload
     config.vm.provision "shell", path: "provision/install-software-visualstudio.ps1"
     config.vm.provision :reload
