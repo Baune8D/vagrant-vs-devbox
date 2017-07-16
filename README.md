@@ -21,11 +21,11 @@ Provisioning can take many hours, be patient.
 3. Activate SSH in Git Bash and Sourcetree.  
 ^^ Look at README in ./ssh folder  
 4. (Optional) Disable Windows Defender to save CPU  
-^^ Edit group policy -> Computer Configuration -> Administrative Templates -> Windows Components -> Windows Defender Antivirus -> Turn off Windows Defender Antivirus -> Enabled
+^^ Edit group policy -> Computer Configuration -> Administrative Templates -> Windows Components -> Windows Defender Antivirus -> Turn off Windows Defender Antivirus -> Disabled
 
 ## **Information:**
 This is built for use with a Packer Windows 10 base image.  
-Packer setup repository: [GitHub link](https://github.com/baunegaard/packer-win10-basedisk)  
+Packer setup repository: [GitHub link](https://github.com/Baune8D/packer-win10-basedisk)  
 A pre-build default box will be downloaded on first run.
 
 Default hypervisor settings are: 2 CPU's and 6144 MB memory.  

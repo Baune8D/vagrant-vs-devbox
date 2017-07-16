@@ -5,7 +5,7 @@
 What software to install can be configured in the file: **install-software.ps1**
 
 ### **Visual Studio**
-Visual Studio 2017 Professional is installed with all available features.
+Visual Studio 2017 Community is installed with all available features.
 
 ### **Provision order:**
 Script: **install-essentials.ps1** (Chocolatey & Boxstarter)  
@@ -50,10 +50,10 @@ Web Platform Installer
 
 Git  
 Python 2  
+Ruby  
 Node.js  
 NuGet CLI  
 7-Zip  
-P4Merge  
 Firefox  
 Chrome  
 Notepad++  
@@ -62,7 +62,7 @@ LINQPad
 Fiddler4  
 PuTTY  
 WinSCP  
-Sourcetree
+Sourcetree  
 Redis
 
 -- REBOOT --
@@ -73,20 +73,16 @@ Visual Studio 2017 Professional
 
 SQL Server Management Studio
 
-Visual Studio Extensions: **Disabled temporarily**  
- - Web Essentials  
- - Web Extension Pack  
- - .ignore  
- - NPM Task Runner  
- - Open in VS Code  
- - Dummy Text Generator  
- - Trailing Whitespace Visualizer  
- - VSColorOutput
+ReSharper  
+ReSharper C++  
+DotCover  
+DotTrace  
+DotMemory  
+DotPeek
 
 ## Recommended software.
 **Cisco AnyConnect** This is essential!!!!  
 
-**ReSharper Ultimate**  
-
 Visual Studio plugins:  
+**Web Essentials**  
 **ResXManager**
