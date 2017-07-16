@@ -10,23 +10,23 @@ Vagrant.configure("2") do |config|
     config.hostmanager.manage_guest = true
 
     config.vm.define "Win10_VS2017" do |node|
-        node.vm.hostname = 'saxisdev'
+        node.vm.hostname = "win10vs2017"
         node.hostmanager.aliases = %w(
             # Add hostnames here
         )
     end
 
     config.vm.provider "parallels" do |prl, override|
-        override.vm.box = "mbl-win10pro-parallels"
+        override.vm.box = "win10pro-parallels-8D"
         override.vm.box_url = "https://devops.saxis.dk/windows_10_parallels.box"
         prl.name = "Win10_VS2017"
         prl.customize ["set", :id, "--cpus", "2"]
         prl.customize ["set", :id, "--memsize", "6144"]
-        prl.customize ["set", :id, "--tools-autoupdate", "yes"]
+        prl.customize ["set", :id, "--efi-boot", "off"]
     end
 
     config.vm.provider :vmware_fusion do |v, override|
-        override.vm.box = "mbl-win10pro-vmware"
+        override.vm.box = "win10pro-vmware-8D"
         override.vm.box_url = "https://devops.saxis.dk/windows_10_vmware.box"
         v.vmx["numvcpus"] = "2"
         v.vmx["memsize"] = "6144"
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider :vmware_workstation do |v, override|
-        override.vm.box = "mbl-win10pro-vmware"
+        override.vm.box = "win10pro-vmware-8D"
         override.vm.box_url = "https://devops.saxis.dk/windows_10_vmware.box"
         v.vmx["numvcpus"] = "2"
         v.vmx["memsize"] = "6144"
@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider :virtualbox do |vbox, override|
-        override.vm.box = "mbl-win10pro-virtualbox"
+        override.vm.box = "win10pro-virtualbox-8D"
         override.vm.box_url = "https://devops.saxis.dk/windows_10_virtualbox.box"
         vbox.customize ["modifyvm", :id, "--cpus", 2]
         vbox.customize ["modifyvm", :id, "--memory", 6144]
