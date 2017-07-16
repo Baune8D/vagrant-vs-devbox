@@ -1,13 +1,3 @@
-# Set power plan to high performance.
-Write-Host "Setting power plan to high performance"
-Try {
-  $HighPerf = powercfg -l | ForEach-Object{if($_.contains("High performance")) {$_.split()[3]}}
-  $CurrPlan = $(powercfg -getactivescheme).split()[3]
-  if ($CurrPlan -ne $HighPerf) {powercfg -setactive $HighPerf}
-} Catch {
-  Write-Warning -Message "Unable to set power plan to high performance"
-}
-
 # Disable screensaver
 Write-Host "Disabling Screensaver"
 Set-ItemProperty "HKCU:\Control Panel\Desktop" -Name ScreenSaveActive -Value 0 -Type DWord
