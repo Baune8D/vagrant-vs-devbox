@@ -4,11 +4,11 @@
 ### **Requires:**  
 Vagrant - [Link](https://www.vagrantup.com/downloads.html)  
 Vagrant-Reload Plugin - CMD: **vagrant plugin install vagrant-reload**  
-Vagrant-HostsManager Plugin - CMD: **vagrant plugin install vagrant-hostsmanager**  
-**Bug in Vagrant-HostManager with Vagrant > 1.8.1** - Fix: [Link](https://github.com/devopsgroup-io/vagrant-hostmanager/pull/229/commits/2ce7a0d4a6b45fbf959dff0c8144c359d633dc81)
+Vagrant-HostsManager Plugin - CMD: **vagrant plugin install vagrant-hostsmanager**
 
 Providers for VirtualBox, VMware Fusion, VMware Workstation and Parallels are pre-configured.  
-All hypervisors except VirtualBox will need a matching provider plugin installed for Vagrant.
+All hypervisors except VirtualBox will need a matching provider plugin installed for Vagrant.  
+For Parallels: **vagrant plugin install vagrant-parallels**
 
 To use the default settings, execute from repo root:  
 **vagrant up**  
@@ -25,11 +25,10 @@ Provisioning can take many hours, be patient.
 
 ## **Information:**
 This is built for use with a Packer Windows 10 base image.  
-Packer setup repository: [GitHub link](https://github.com/Baune8D/packer-win10-basedisk)  
+Packer setup repository: [GitHub link](https://github.com/Baune8D/packer-win10-basebox)  
 A pre-build default box will be downloaded on first run.
 
 Default hypervisor settings are: 2 CPU's and 6144 MB memory.  
 This can be changed in Vagrantfile.
 
-Look at README in provision folder for a list of installed software,  
-and suggestions for other recommended software.
+Look at README in provision folder for a list of installed software, and suggestions for other recommended software.

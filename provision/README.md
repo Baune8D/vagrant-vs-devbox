@@ -50,7 +50,6 @@ Web Platform Installer
 
 Git  
 Python 2  
-Ruby  
 Node.js  
 NuGet CLI  
 7-Zip  
@@ -84,5 +83,9 @@ DotPeek
 **Cisco AnyConnect** This is essential!!!!  
 
 Visual Studio plugins:  
-**Web Essentials**  
+**Web Essentials 2017**  
+**NPM Task Runner**  
+**Open in VS Code**  
+**.ignore**  
+**VSColorOutput**  
 **ResXManager**
