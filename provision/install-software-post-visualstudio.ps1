@@ -4,11 +4,11 @@ cinst sql-server-management-studio
 
 # ---- ReSharper Ultimate ----
 # Commercial
-cinst resharper
-cinst resharpercpp
-cinst dotcover
-cinst dottrace
-cinst dotmemory
+#cinst resharper
+#cinst resharpercpp
+#cinst dotcover
+#cinst dottrace
+#cinst dotmemory
 # Free
 cinst dotpeek
 
