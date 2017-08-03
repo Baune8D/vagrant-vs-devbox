@@ -21,5 +21,7 @@ cinst putty.install
 cinst winscp
 cinst sourcetree
 cinst redis-64
+cinst ruby
+cinst postman
 
 choco feature disable -n=allowGlobalConfirmation
