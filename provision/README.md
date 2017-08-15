@@ -46,7 +46,7 @@ Web Platform Installer
  - Application Request Routing 3.0
 
 Git  
-Python 2  
+Python 3  
 Node.js  
 NuGet CLI  
 7-Zip  
