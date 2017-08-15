@@ -1,2 +1,2 @@
 Write-Host "Installing Visual Studio 2017. This may take a while..."
-Start-Process -FilePath 'C:\vagrant\provision\vs_community__1307844785.1500130882.exe' -ArgumentList ('--wait','--passive','--norestart','--all') -Wait
+Start-Process -FilePath 'C:\vagrant\provision\vs_community__850436406.1500241239.exe' -ArgumentList ('--wait','--passive','--norestart','--all') -Wait
