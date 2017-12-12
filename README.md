@@ -16,19 +16,16 @@ Now sit back while Vagrant provisions your new development machine.
 Provisioning can take many hours, be patient.
 
 **Recommended steps after provisioning:**  
-1. Activate Windows.  
-2. Enable Windows Developer Mode.  
-3. Activate SSH in Git Bash and Sourcetree.  
-^^ Look at README in ./ssh folder  
-4. (Optional) Disable Windows Defender to save CPU  
-^^ Edit group policy -> Computer Configuration -> Administrative Templates -> Windows Components -> Windows Defender Antivirus -> Turn off Windows Defender Antivirus -> Disabled
+1. Activate Windows  
+2. (Optional) Enable Windows Developer Mode
+3. Install Visual Studio extensions
 
 ## **Information:**
 This is built for use with a Packer Windows 10 base image.  
 Packer setup repository: [GitHub link](https://github.com/Baune8D/packer-win10-basebox)  
 A pre-build default box will be downloaded on first run.
 
-Default hypervisor settings are: 2 CPU's and 6144 MB memory.  
+Default hypervisor settings are: 4 CPU's and 8 GB memory.  
 This can be changed in Vagrantfile.
 
-Look at README in provision folder for a list of installed software, and suggestions for other recommended software.
+Look at README in software folder for a list of installed software, and suggestions for other recommended software.

@@ -1,29 +1,16 @@
-# Provision scripts for Windows 10
+# Provisioning scripts
 
 **See bottom for other recommended software.**
 
 ### **Visual Studio**
 Visual Studio 2017 Community is installed with all available features.
 
-### **Provision order:**
-**install-essentials.ps1**  
-**configure-pre-windowssettings.ps1**  
-**install-windowsupdates.ps1** (Update before intallation of software)  
--- REBOOT --  
-**install-windowsupdates.ps1** (Update again to make sure we got everything)  
--- REBOOT --  
-**install-windowsfeatures.ps1**  
--- REBOOT --  
-**install-software.ps1**  
-**install-rubygems.bat**
--- REBOOT --  
-**install-visualstudio.ps1**  
--- REBOOT --  
-**install-software-post-visualstudio.ps1**  
--- REBOOT --  
-**install-windowsupdates.ps1** (Update again after software installation)  
-**configure-post-windowssettings.ps1**  
--- REBOOT --  
+### **Script order**
+install-windowsfeatures.ps1  
+install-software.ps1  
+install-rubygems.bat  
+install-visualstudio.ps1  
+install-post-visualstudio.ps1
 
 ## **Installed Software (In order)**
 Chocolatey  
@@ -46,8 +33,9 @@ Web Platform Installer
  - Application Request Routing 3.0
 
 Git  
-Python 3  
+Python  
 Node.js  
+Yarn  
 NuGet CLI  
 7-Zip  
 Firefox  
@@ -55,24 +43,25 @@ Chrome
 Notepad++  
 Visual Studio Code   
 LINQPad  
-Fiddler4  
 PuTTY  
 WinSCP  
 Sourcetree  
-Redis
+Redis  
+Postman  
 Ruby
-Postman
 
-Ultrahook
+RubyGems:  
+- Ultrahook
 
-Visual Studio 2017 Community
+Visual Studio 2017 Professional
 
 SQL Server Management Studio  
+.NET Core Windows Server Hosting  
 DotPeek
 
-## Recommended Visual Studio plugins:
+## **Recommended Visual Studio plugins:**
 Web Essentials 2017  
 NPM Task Runner  
 VSColorOutput  
 ResXManager  
-Conveyor
+Conveyor (For browser access outside VM)

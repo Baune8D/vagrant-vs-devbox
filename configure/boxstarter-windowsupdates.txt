@@ -1,0 +1,2 @@
+Enable-MicrosoftUpdate
+Install-WindowsUpdate -GetUpdatesFromMS -AcceptEula

@@ -9,6 +9,7 @@ cinst ARRv3_0 --source webpi
 cinst git
 cinst python
 cinst nodejs
+cinst yarn
 cinst nuget.commandline
 cinst 7zip
 cinst firefox -packageParameters "l=en-US"
@@ -16,12 +17,11 @@ cinst googlechrome
 cinst notepadplusplus
 cinst visualstudiocode
 cinst linqpad
-cinst fiddler4
 cinst putty.install
 cinst winscp
 cinst sourcetree
 cinst redis-64
-cinst ruby
 cinst postman
+cinst ruby
 
 choco feature disable -n=allowGlobalConfirmation

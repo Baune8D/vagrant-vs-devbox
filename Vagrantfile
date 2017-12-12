@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+    config.vm.box = "baunegaard/win10pro-da"
+
     config.winrm.username = "vagrant"
     config.winrm.password = "vagrant"
 
@@ -9,65 +11,49 @@ Vagrant.configure("2") do |config|
     config.hostmanager.manage_host = true
     config.hostmanager.manage_guest = true
 
-    config.vm.define "Win10_VS2017" do |node|
-        node.vm.hostname = "win10vs2017"
+    config.vm.define "Win10_VS2017_Saxis" do |node|
+        node.vm.hostname = "win10vs2017saxis"
         node.hostmanager.aliases = %w(
-            # Add hostnames here
+            # Add hostnames to map here
         )
     end
 
     config.vm.provider "parallels" do |prl, override|
-        override.vm.box = "win10pro-parallels-8D"
-        override.vm.box_url = "https://devops.saxis.dk/windows_10_parallels.box"
-        prl.name = "Win10_VS2017"
-        prl.customize ["set", :id, "--cpus", "2"]
-        prl.customize ["set", :id, "--memsize", "6144"]
+        prl.name = "Win10_VS2017_Saxis"
+        prl.update_guest_tools = true
+        prl.cpus = 4
+        prl.memory = 8192
+        prl.customize ["set", :id, "--videosize", "1024"]
         prl.customize ["set", :id, "--efi-boot", "off"]
     end
 
-    config.vm.provider :vmware_fusion do |v, override|
-        override.vm.box = "win10pro-vmware-8D"
-        override.vm.box_url = "https://devops.saxis.dk/windows_10_vmware.box"
-        v.vmx["numvcpus"] = "2"
-        v.vmx["memsize"] = "6144"
-        v.vmx["ethernet0.virtualDev"] = "vmxnet3"
-        v.vmx["scsi0.virtualDev"] = "lsisas1068"
-        v.enable_vmrun_ip_lookup = false
-    end
-
-    config.vm.provider :vmware_workstation do |v, override|
-        override.vm.box = "win10pro-vmware-8D"
-        override.vm.box_url = "https://devops.saxis.dk/windows_10_vmware.box"
-        v.vmx["numvcpus"] = "2"
-        v.vmx["memsize"] = "6144"
+    config.vm.provider :vmware_desktop do |v, override|
+        v.vmx["displayName"] = "Win10_VS2017_Saxis"
+        v.vmx["numvcpus"] = "4"
+        v.vmx["memsize"] = "8192"
         v.vmx["ethernet0.virtualDev"] = "vmxnet3"
         v.vmx["scsi0.virtualDev"] = "lsisas1068"
         v.enable_vmrun_ip_lookup = false
     end
 
     config.vm.provider :virtualbox do |vbox, override|
-        override.vm.box = "win10pro-virtualbox-8D"
-        override.vm.box_url = "https://devops.saxis.dk/windows_10_virtualbox.box"
-        vbox.customize ["modifyvm", :id, "--cpus", 2]
-        vbox.customize ["modifyvm", :id, "--memory", 6144]
+        vbox.customize ["modifyvm", :id, "--cpus", 4]
+        vbox.customize ["modifyvm", :id, "--memory", 8192]
     end
 
-    config.vm.provision "shell", path: "provision/install-essentials.ps1"
-    config.vm.provision "shell", path: "provision/configure-pre-windowssettings.ps1"
-    config.vm.provision "shell", path: "provision/install-windowsupdates.ps1"
+    config.vm.provision "shell", path: "configure/pre-windowssettings.ps1"
+    config.vm.provision "shell", path: "software/install-essentials.ps1"
     config.vm.provision :reload
-    config.vm.provision "shell", path: "provision/install-windowsupdates.ps1"
+    config.vm.provision "shell", path: "software/install-windowsfeatures.ps1"
     config.vm.provision :reload
-    config.vm.provision "shell", path: "provision/install-windowsfeatures.ps1"
+    config.vm.provision "shell", path: "software/install-software.ps1"
+    config.vm.provision "shell", path: "software/install-rubygems.bat"
     config.vm.provision :reload
-    config.vm.provision "shell", path: "provision/install-software.ps1"
-    config.vm.provision "shell", path: "provision/install-rubygems.bat"
+    config.vm.provision "shell", path: "software/install-visualstudio.ps1"
     config.vm.provision :reload
-    config.vm.provision "shell", path: "provision/install-software-visualstudio.ps1"
+    config.vm.provision "shell", path: "software/install-post-visualstudio.ps1"
     config.vm.provision :reload
-    config.vm.provision "shell", path: "provision/install-software-post-visualstudio.ps1"
+    config.vm.provision "shell", path: "configure/post-windowssettings.ps1"
     config.vm.provision :reload
-    config.vm.provision "shell", path: "provision/install-windowsupdates.ps1"
-    config.vm.provision "shell", path: "provision/configure-post-windowssettings.ps1"
-    config.vm.provision :reload
+    config.vm.provision "shell", path: "configure/install-windowsupdates.ps1"
 end

@@ -1,2 +1,2 @@
 Set-WindowsExplorerOptions -EnableShowFileExtensions
-Enable-MicrosoftUpdate
+Enable-UAC
