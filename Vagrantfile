@@ -11,15 +11,15 @@ Vagrant.configure("2") do |config|
     config.hostmanager.manage_host = true
     config.hostmanager.manage_guest = true
 
-    config.vm.define "Win10_VS2017_Saxis" do |node|
-        node.vm.hostname = "win10vs2017saxis"
+    config.vm.define "Win10_VS2017" do |node|
+        node.vm.hostname = "win10vs2017"
         node.hostmanager.aliases = %w(
             # Add hostnames to map here
         )
     end
 
     config.vm.provider "parallels" do |prl, override|
-        prl.name = "Win10_VS2017_Saxis"
+        prl.name = "Win10_VS2017"
         prl.update_guest_tools = true
         prl.cpus = 4
         prl.memory = 8192
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider :vmware_desktop do |v, override|
-        v.vmx["displayName"] = "Win10_VS2017_Saxis"
+        v.vmx["displayName"] = "Win10_VS2017"
         v.vmx["numvcpus"] = "4"
         v.vmx["memsize"] = "8192"
         v.vmx["ethernet0.virtualDev"] = "vmxnet3"
