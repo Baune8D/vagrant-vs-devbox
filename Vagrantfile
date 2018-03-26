@@ -3,6 +3,7 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "baunegaard/win10pro-da"
+    config.vm.hostname = "win10vs2017"
 
     config.winrm.username = "vagrant"
     config.winrm.password = "vagrant"
@@ -10,21 +11,17 @@ Vagrant.configure("2") do |config|
     config.hostmanager.enabled = true
     config.hostmanager.manage_host = true
     config.hostmanager.manage_guest = true
-
-    config.vm.define "Win10_VS2017" do |node|
-        node.vm.hostname = "win10vs2017"
-        node.hostmanager.aliases = %w(
-            # Add hostnames to map here
-        )
-    end
+    config.hostmanager.aliases = %w(
+        # Add hostnames to map here
+    )
 
     config.vm.provider "parallels" do |prl, override|
         prl.name = "Win10_VS2017"
-        prl.update_guest_tools = true
         prl.cpus = 4
         prl.memory = 8192
         prl.customize ["set", :id, "--videosize", "1024"]
         prl.customize ["set", :id, "--efi-boot", "off"]
+        prl.update_guest_tools = true
     end
 
     config.vm.provider :vmware_desktop do |v, override|
@@ -36,9 +33,9 @@ Vagrant.configure("2") do |config|
         v.enable_vmrun_ip_lookup = false
     end
 
-    config.vm.provider :virtualbox do |vbox, override|
-        vbox.customize ["modifyvm", :id, "--cpus", 4]
-        vbox.customize ["modifyvm", :id, "--memory", 8192]
+    config.vm.provider :virtualbox do |v, override|
+        v.customize ["modifyvm", :id, "--cpus", 4]
+        v.customize ["modifyvm", :id, "--memory", 8192]
     end
 
     config.vm.provision "shell", path: "configure/pre-windowssettings.ps1"
