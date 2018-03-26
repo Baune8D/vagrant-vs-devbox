@@ -31,9 +31,11 @@ Vagrant.configure("2") do |config|
         v.vmx["ethernet0.virtualDev"] = "vmxnet3"
         v.vmx["scsi0.virtualDev"] = "lsisas1068"
         v.enable_vmrun_ip_lookup = false
+        v.whitelist_verified = true
     end
 
     config.vm.provider :virtualbox do |v, override|
+        v.name = "Win10_VS2017"
         v.customize ["modifyvm", :id, "--cpus", 4]
         v.customize ["modifyvm", :id, "--memory", 8192]
     end
