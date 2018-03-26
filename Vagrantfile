@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.box = "baunegaard/win10pro-en"
+    config.vm.box = "baunegaard/win10pro-da"
     config.vm.hostname = "win10vs2017"
 
     config.winrm.username = "vagrant"
