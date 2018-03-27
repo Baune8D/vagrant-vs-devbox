@@ -4,7 +4,7 @@
 ### **Requires:**  
 Vagrant - [Link](https://www.vagrantup.com/downloads.html)  
 Vagrant-Reload Plugin - CMD: **vagrant plugin install vagrant-reload**  
-Vagrant-HostsManager Plugin - CMD: **vagrant plugin install vagrant-hostsmanager**
+Vagrant-HostManager Plugin - CMD: **vagrant plugin install vagrant-hostmanager**
 
 Providers for VirtualBox, VMware Fusion, VMware Workstation and Parallels are pre-configured.  
 All hypervisors except VirtualBox will need a matching provider plugin installed for Vagrant.  
