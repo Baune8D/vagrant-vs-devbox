@@ -1,5 +1,5 @@
 Write-Host "Disable Windows Defender"
-Set-MpPreference -DisableRealtimeMonitoring $true
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
 
 Write-Host "Adding firewall rules"
 netsh advfirewall firewall add rule name="Conveyor" dir=in action=allow protocol=TCP localport=45455-45470
