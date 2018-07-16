@@ -1,9 +1,5 @@
 choco feature enable -n=allowGlobalConfirmation
 
-cinst sql-server-management-studio
-cinst dotnetcore-windowshosting
-cinst dotnetcore-sdk
-
 # ---- ReSharper Ultimate ----
 # Commercial
 #cinst resharper
