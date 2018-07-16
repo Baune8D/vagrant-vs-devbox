@@ -23,5 +23,8 @@ cinst sourcetree
 cinst redis-64
 cinst postman
 cinst ruby
+cinst sql-server-management-studio
+cinst dotnetcore-sdk
+cinst dotnetcore-windowshosting
 
 choco feature disable -n=allowGlobalConfirmation
