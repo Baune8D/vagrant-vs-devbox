@@ -17,7 +17,6 @@ Visual Studio 2017 Community is installed with all available features.
 
 ### install-essentials.ps1
 * Chocolatey
-* Boxstarter
 
 ### install-windowsfeatures.ps1
 * Windows Features:
