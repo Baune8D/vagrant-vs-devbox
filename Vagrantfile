@@ -41,8 +41,8 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provision "shell", path: "configure/pre-windowssettings.ps1"
-    config.vm.provision "shell", path: "software/install-essentials.ps1"
     config.vm.provision :reload
+    config.vm.provision "shell", path: "software/install-essentials.ps1"
     config.vm.provision "shell", path: "software/install-windowsfeatures.ps1"
     config.vm.provision :reload
     config.vm.provision "shell", path: "software/install-software.ps1"
@@ -51,7 +51,6 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "software/install-visualstudio.ps1"
     config.vm.provision :reload
     config.vm.provision "shell", path: "software/install-post-visualstudio.ps1"
-    config.vm.provision :reload
     config.vm.provision "shell", path: "configure/post-windowssettings.ps1"
     config.vm.provision :reload
     config.vm.provision "shell", path: "configure/install-windowsupdates.ps1"
