@@ -10,3 +10,5 @@ reg add HKLM\SYSTEM\CurrentControlSet\Control\Power\ /v HibernateFileSizePercent
 # Disable monitor timeout
 Write-Host "Disabling monitor timeout"
 powercfg -change -monitor-timeout-ac 0
+Write-Host "Setting Windows Explorer options"
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name HideFileExt -Value 0

@@ -7,8 +7,5 @@ netsh advfirewall firewall add rule name="Conveyor" dir=in action=allow protocol
 Write-Host "Applying dark Windows theme"
 regedit /s C:\vagrant\configure\dark-theme.reg
 
-Write-Host "Prepare Boxstarter scripts"
-New-Item ~\boxstarter -Type Directory
-Copy-Item C:\vagrant\configure\boxstarter-*.txt -Destination ~\boxstarter\
-
-Install-BoxstarterPackage -PackageName ~\boxstarter\boxstarter-windowssettings.txt -DisableReboots
+Write-Host "Enabling UAC"
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name EnableLUA -Value 1
