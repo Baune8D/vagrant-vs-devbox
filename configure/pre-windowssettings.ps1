@@ -8,7 +8,7 @@ reg add HKLM\SYSTEM\CurrentControlSet\Control\Power\ /v HibernateFileSizePercent
 Write-Host "Disabling monitor timeout"
 powercfg -change -monitor-timeout-ac 0
 
-Write-Host "Disable Windows Defender"
+Write-Host "Disabling Windows Defender"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
 
 Write-Host "Setting Windows Explorer options"
