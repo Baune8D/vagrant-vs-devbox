@@ -8,7 +8,7 @@ cinst ARRv3_0 --source webpi
 # ---- Applications ----
 cinst git
 cinst python
-cinst nodejs
+cinst nodejs-lts
 cinst yarn
 cinst nuget.commandline
 cinst 7zip
