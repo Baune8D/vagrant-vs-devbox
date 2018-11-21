@@ -19,7 +19,6 @@ Vagrant.configure("2") do |config|
         prl.name = "Win10_VS2017"
         prl.cpus = 4
         prl.memory = 8192
-        prl.customize ["set", :id, "--videosize", "1024"]
         prl.customize ["set", :id, "--efi-boot", "off"]
         prl.update_guest_tools = true
     end
