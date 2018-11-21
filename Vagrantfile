@@ -19,7 +19,6 @@ Vagrant.configure("2") do |config|
         prl.name = "Win10_VS2017"
         prl.cpus = 4
         prl.memory = 8192
-        prl.customize ["set", :id, "--videosize", "1024"]
         prl.customize ["set", :id, "--efi-boot", "off"]
         prl.update_guest_tools = true
     end
@@ -46,6 +45,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "software/install-windowsfeatures.ps1"
     config.vm.provision :reload
     config.vm.provision "shell", path: "software/install-software.ps1"
+    config.vm.provision "shell", path: "software/install-vscode-extensions.bat"
     config.vm.provision "shell", path: "software/install-rubygems.bat"
     config.vm.provision :reload
     config.vm.provision "shell", path: "software/install-visualstudio.ps1"
