@@ -7,9 +7,10 @@ Visual Studio 2017 Community is installed with all available features.
 1. [install-essentials.ps1](#install-essentialsps1)
 2. [install-windowsfeatures.ps1](#install-windowsfeaturesps1)
 3. [install-software.ps1](#install-softwareps1)
-4. [install-rubygems.bat](#install-rubygemsbat)
-5. [install-visualstudio.ps1](#install-visualstudiops1)
-6. [install-post-visualstudio.ps1](#install-post-visualstudiops1)
+4. [install-vscode-extensions.bat](#install-vscode-extensionsbat)
+5. [install-rubygems.bat](#install-rubygemsbat)
+6. [install-visualstudio.ps1](#install-visualstudiops1)
+7. [install-post-visualstudio.ps1](#install-post-visualstudiops1)
 
 ## Installed Software (In order)
 
