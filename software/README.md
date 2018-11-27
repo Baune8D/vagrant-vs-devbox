@@ -1,7 +1,5 @@
 # Provisioning scripts
 
-**[See bottom for recommended software.](#recommended-visual-studio-plugins)**
-
 ## Visual Studio
 Visual Studio 2017 Community is installed with all available features.
 
@@ -37,7 +35,7 @@ Visual Studio 2017 Community is installed with all available features.
   * Application Request Routing 3.0
 * Git
 * Python
-* Node.js
+* Node.js LTS
 * Yarn
 * NuGet CLI
 * 7-Zip
@@ -56,6 +54,14 @@ Visual Studio 2017 Community is installed with all available features.
 * .NET Core Windows Server Hosting
 * .NET Core SDK
 
+### install-vscode-extensions.bat
+* Visual Studio Code Extensions
+  * C#
+  * EditorConfig for VS Code
+  * Prettier - Code formatter
+  * ESLint
+  * stylelint
+
 ### install-rubygems.bat
 * RubyGems:
   * Ultrahook
@@ -65,9 +71,3 @@ Visual Studio 2017 Community is installed with all available features.
 
 ### install-post-visualstudio.ps1
 * DotPeek
-
-## Recommended Visual Studio plugins
-* Web Essentials 2017
-* NPM Task Runner
-* VSColorOutput
-* ResXManager

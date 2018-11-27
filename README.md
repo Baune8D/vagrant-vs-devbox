@@ -16,10 +16,6 @@ To use the default settings, execute from repo root: ```vagrant up```
 Now sit back while Vagrant provisions your new development machine.  
 Provisioning can take many hours, be patient.
 
-#### Recommended steps after provisioning
-1. Activate Windows  
-1. Install Visual Studio extensions
-
 ## Information
 This is built for use with a Packer Windows 10 base image.  
 Packer setup repository: [GitHub link](https://github.com/Baune8D/packer-win10-basebox)  
