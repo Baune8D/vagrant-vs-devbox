@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "baunegaard/win10pro-en"
-    config.vm.hostname = "win10vs2017"
+    config.vm.hostname = "win10vs"
 
     config.winrm.username = "vagrant"
     config.winrm.password = "vagrant"
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     )
 
     config.vm.provider "parallels" do |prl, override|
-        prl.name = "Win10_VS2017"
+        prl.name = "Win10_VS"
         prl.cpus = 4
         prl.memory = 8192
         prl.customize ["set", :id, "--efi-boot", "off"]
@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider :vmware_desktop do |v, override|
-        v.vmx["displayName"] = "Win10_VS2017"
+        v.vmx["displayName"] = "Win10_VS"
         v.vmx["numvcpus"] = "4"
         v.vmx["memsize"] = "8192"
         v.vmx["ethernet0.virtualDev"] = "vmxnet3"
@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider :virtualbox do |v, override|
-        v.name = "Win10_VS2017"
+        v.name = "Win10_VS"
         v.customize ["modifyvm", :id, "--cpus", 4]
         v.customize ["modifyvm", :id, "--memory", 8192]
     end
