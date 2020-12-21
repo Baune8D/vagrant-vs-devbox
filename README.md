@@ -5,7 +5,8 @@
 ### Requirements
 **Vagrant** - [Link](https://www.vagrantup.com/downloads.html)  
 **Vagrant-Reload** Plugin: ```vagrant plugin install vagrant-reload```  
-**Vagrant-HostManager** Plugin: ```vagrant plugin install vagrant-hostmanager```
+**Vagrant-HostManager** Plugin: ```vagrant plugin install vagrant-hostmanager```  
+Visual Studio installer - (Drop into ```software``` folder)
 
 ### Getting Started
 Providers for **VirtualBox**, **VMware** and **Parallels** are pre-configured.  

@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "baunegaard/win10pro-da"
-    config.vm.hostname = "win10vs2017"
+    config.vm.hostname = "win10vs"
 
     config.winrm.username = "vagrant"
     config.winrm.password = "vagrant"
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     )
 
     config.vm.provider "parallels" do |prl, override|
-        prl.name = "Win10_VS2017"
+        prl.name = "Win10_VS"
         prl.cpus = 4
         prl.memory = 8192
         prl.customize ["set", :id, "--efi-boot", "off"]
@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider :vmware_desktop do |v, override|
-        v.vmx["displayName"] = "Win10_VS2017"
+        v.vmx["displayName"] = "Win10_VS"
         v.vmx["numvcpus"] = "4"
         v.vmx["memsize"] = "8192"
         v.vmx["ethernet0.virtualDev"] = "vmxnet3"
@@ -34,23 +34,14 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provider :virtualbox do |v, override|
-        v.name = "Win10_VS2017"
+        v.name = "Win10_VS"
         v.customize ["modifyvm", :id, "--cpus", 4]
         v.customize ["modifyvm", :id, "--memory", 8192]
     end
 
     config.vm.provision "shell", path: "configure/pre-windowssettings.ps1"
     config.vm.provision :reload
-    config.vm.provision "shell", path: "software/install-essentials.ps1"
-    config.vm.provision "shell", path: "software/install-windowsfeatures.ps1"
-    config.vm.provision :reload
-    config.vm.provision "shell", path: "software/install-software.ps1"
-    config.vm.provision "shell", path: "software/install-vscode-extensions.bat"
-    config.vm.provision "shell", path: "software/install-rubygems.bat"
-    config.vm.provision :reload
-    config.vm.provision "shell", path: "software/install-visualstudio.ps1"
-    config.vm.provision :reload
-    config.vm.provision "shell", path: "software/install-post-visualstudio.ps1"
+    config.vm.provision "shell", path: "software/install.ps1"
     config.vm.provision "shell", path: "configure/post-windowssettings.ps1"
     config.vm.provision :reload
     config.vm.provision "shell", path: "configure/install-windowsupdates.ps1"
