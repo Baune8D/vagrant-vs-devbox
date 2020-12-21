@@ -26,7 +26,7 @@ A pre-built default box will be downloaded on first run.
 Default hypervisor settings are: 4 CPU's and 8 GB memory.  
 This can be changed in ```Vagrantfile```.
 
-This box uses Vagrant-HostManager for mapping of hostnames.  
+This box uses ```Vagrant-HostManager``` for mapping of hostnames.  
 See ```Vagrantfile``` if you need to map custom hostnames.
 
 ## Software
