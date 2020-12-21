@@ -13,6 +13,3 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpywar
 
 Write-Host "Setting Windows Explorer options"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name HideFileExt -Value 0
-
-Write-Host "Applying dark Windows theme"
-regedit /s C:\vagrant\configure\dark-theme.reg
