@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  config.vagrant.plugins = ["vagrant-hostmanager"]
+
   # Set DEVBOX_BOX when you create the machine to use another box, e.g. baunegaard/win11pro-da
   config.vm.box = ENV.fetch("DEVBOX_BOX", "baunegaard/win11pro-en")
   config.vm.hostname = "win11vs"
