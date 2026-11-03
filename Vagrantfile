@@ -11,9 +11,8 @@ Vagrant.configure("2") do |config|
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
   config.hostmanager.manage_guest = true
-  config.hostmanager.aliases = %w(
-    # Add hostnames to map here
-  )
+  # Extra hostnames for the machine, e.g. %w(myapp.test api.myapp.test)
+  config.hostmanager.aliases = %w()
 
   config.vm.provider "parallels" do |prl, override|
     prl.name = "Win10_VS"
