@@ -50,7 +50,7 @@ choco install dotnet-windowshosting
 
 refreshenv
 
-Write-Host "Installing Visual Studio. This may take a while..."
+Write-Output "Installing Visual Studio. This may take a while..."
 $exe = Get-ChildItem -Path C:\vagrant\software\vs_*.exe -File | Select-Object Name
 Start-Process -FilePath "C:\vagrant\software\$($exe.Name)" -ArgumentList ('--wait','--passive','--norestart','--all') -Wait
 
