@@ -50,9 +50,14 @@ choco install dotnet-windowshosting
 
 refreshenv
 
-Write-Output "Installing Visual Studio. This may take a while..."
-$exe = Get-ChildItem -Path C:\vagrant\software\vs_*.exe -File | Select-Object Name
-Start-Process -FilePath "C:\vagrant\software\$($exe.Name)" -ArgumentList ('--wait','--passive','--norestart','--all') -Wait
+$installer = Get-ChildItem -Path C:\vagrant\software\vs_*.exe -File | Select-Object -First 1
+if ($installer) {
+  Write-Output "Installing Visual Studio with $($installer.Name). This may take a while..."
+  Start-Process -FilePath $installer.FullName -ArgumentList ('--wait', '--passive', '--norestart', '--all') -Wait
+}
+else {
+  Write-Warning "No Visual Studio installer (vs_*.exe) in the software folder, skipping Visual Studio"
+}
 
 # ---- ReSharper Ultimate ----
 # Commercial
