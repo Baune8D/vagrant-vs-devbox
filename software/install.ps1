@@ -79,7 +79,7 @@ code --install-extension editorconfig.editorconfig
 code --install-extension esbenp.prettier-vscode
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension stylelint.vscode-stylelint
-code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-azuretools.vscode-containers
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode.powershell
 code --install-extension vue.volar

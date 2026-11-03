@@ -41,7 +41,7 @@ In provisioning order:
    - IIS with ASP.NET 4.x, WebSockets, dynamic compression, and basic and Windows authentication, plus URL Rewrite and Application Request Routing.
    - Git, Python, Node.js LTS, Yarn, NuGet CLI, 7-Zip, Firefox, Chrome, Notepad++, Visual Studio Code, LINQPad, PuTTY, WinSCP, Redis, Ruby, SQL Server Management Studio, and the .NET SDK and Hosting Bundle.
    - Visual Studio, with every workload, and dotPeek.
-   - VS Code extensions: C#, EditorConfig, Prettier, ESLint, Stylelint, Docker, Dev Containers, PowerShell and Vue (Official).
+   - VS Code extensions: C#, EditorConfig, Prettier, ESLint, Stylelint, Container Tools, Dev Containers, PowerShell and Vue (Official).
    - The UltraHook gem.
 3. [configure/post-windowssettings.ps1](configure/post-windowssettings.ps1): turns UAC back on, which the box has off. Then a reboot.
 4. [configure/install-windowsupdates.ps1](configure/install-windowsupdates.ps1): enables Microsoft Update and installs all available updates with PSWindowsUpdate, rebooting when they need it.
