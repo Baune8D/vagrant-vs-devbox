@@ -1,0 +1,25 @@
+configure/install-windowsupdates.ps1
+  s_1da20591e67452::t_8df08a4da12afb 1,5,8
+configure/post-windowssettings.ps1
+  s_1da20591e67452::t_d1fe243320a246 1
+configure/pre-windowssettings.ps1
+  s_1da20591e67452::t_ecfef424d1b6ca 1,5,8,12
+software/install.ps1
+  s_1da20591e67452::t_60d27a7d75f0ba 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4167a5b358004880c8b8d517caf6f9a40ef567ef",
+  "prompts": {},
+  "sessions": {
+    "s_1da20591e67452": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "56de8afb-cd13-4b9c-b07e-fc995dbca6f0",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Morten Larsen <mortenl41@gmail.com>"
+    }
+  }
+}
