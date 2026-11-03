@@ -1,0 +1,19 @@
+Vagrantfile
+  s_1da20591e67452::t_a42717b2245d6c 5-6,8-9,11-16,18-24,26-34,36-40,42-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dbc8933423e68f69d2ba370f118daaf3bba20fcd",
+  "prompts": {},
+  "sessions": {
+    "s_1da20591e67452": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "56de8afb-cd13-4b9c-b07e-fc995dbca6f0",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Morten Larsen <mortenl41@gmail.com>"
+    }
+  }
+}
