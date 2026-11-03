@@ -2,8 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "baunegaard/win10pro-en"
-  config.vm.hostname = "win10vs"
+  # Set DEVBOX_BOX when you create the machine to use another box, e.g. baunegaard/win11pro-da
+  config.vm.box = ENV.fetch("DEVBOX_BOX", "baunegaard/win11pro-en")
+  config.vm.hostname = "win11vs"
 
   config.winrm.username = "vagrant"
   config.winrm.password = "vagrant"
@@ -15,15 +16,14 @@ Vagrant.configure("2") do |config|
   config.hostmanager.aliases = %w()
 
   config.vm.provider "parallels" do |prl, override|
-    prl.name = "Win10_VS"
+    prl.name = "Win11_VS"
     prl.cpus = 4
     prl.memory = 8192
-    prl.customize ["set", :id, "--efi-boot", "off"]
     prl.update_guest_tools = true
   end
 
   config.vm.provider :vmware_desktop do |v, override|
-    v.vmx["displayName"] = "Win10_VS"
+    v.vmx["displayName"] = "Win11_VS"
     v.vmx["numvcpus"] = "4"
     v.vmx["memsize"] = "8192"
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provider :virtualbox do |v, override|
-    v.name = "Win10_VS"
+    v.name = "Win11_VS"
     v.customize ["modifyvm", :id, "--cpus", 4]
     v.customize ["modifyvm", :id, "--memory", 8192]
   end
