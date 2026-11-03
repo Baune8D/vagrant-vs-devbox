@@ -38,10 +38,8 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--memory", 8192]
   end
 
-  config.vm.provision "shell", path: "configure/pre-windowssettings.ps1"
-  config.vm.provision :reload
+  config.vm.provision "shell", path: "configure/pre-windowssettings.ps1", reboot: true
   config.vm.provision "shell", path: "software/install.ps1"
-  config.vm.provision "shell", path: "configure/post-windowssettings.ps1"
-  config.vm.provision :reload
+  config.vm.provision "shell", path: "configure/post-windowssettings.ps1", reboot: true
   config.vm.provision "shell", path: "configure/install-windowsupdates.ps1"
 end
