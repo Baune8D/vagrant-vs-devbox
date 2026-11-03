@@ -42,11 +42,9 @@ choco install vscode.install
 choco install linqpad
 choco install putty.install
 choco install winscp
-choco install redis-64
+choco install redis
 choco install ruby
 choco install sql-server-management-studio
-choco install dotnetcore-sdk
-choco install dotnetcore-windowshosting
 choco install dotnet-sdk
 choco install dotnet-windowshosting
 
@@ -79,7 +77,7 @@ code --install-extension stylelint.vscode-stylelint
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode.powershell
-code --install-extension octref.vetur
+code --install-extension vue.volar
 
 # ---- Ruby Gems ----
 gem install ultrahook
