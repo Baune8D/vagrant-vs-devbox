@@ -1,5 +1,7 @@
 # Install Chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+& ([scriptblock]::Create((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')))
 
 $env:ChocolateyInstall = Convert-Path "$((Get-Command choco).Path)\..\.."
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
@@ -7,45 +9,46 @@ Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 choco feature enable -n=allowGlobalConfirmation
 
 # ---- Windows Features ----
-cinst IIS-WebServerRole --source windowsfeatures
-cinst NetFx4Extended-ASPNET45 --source windowsfeatures
-cinst IIS-NetFxExtensibility45 --source windowsfeatures
-cinst IIS-ISAPIExtensions --source windowsfeatures
-cinst IIS-ISAPIFilter --source windowsfeatures
-cinst IIS-ASPNET45 --source windowsfeatures
-cinst IIS-WebSockets --source windowsfeatures
-cinst IIS-HttpCompressionDynamic --source windowsfeatures
-cinst IIS-BasicAuthentication --source windowsfeatures
-cinst IIS-WindowsAuthentication --source windowsfeatures
+Enable-WindowsOptionalFeature -Online -All -NoRestart -FeatureName @(
+  'IIS-WebServerRole',
+  'NetFx4Extended-ASPNET45',
+  'IIS-NetFxExtensibility45',
+  'IIS-ISAPIExtensions',
+  'IIS-ISAPIFilter',
+  'IIS-ASPNET45',
+  'IIS-WebSockets',
+  'IIS-HttpCompressionDynamic',
+  'IIS-BasicAuthentication',
+  'IIS-WindowsAuthentication'
+) | Out-Null
 
 refreshenv
 
-# ---- Web Platform Installer ----
-cinst webpi
-cinst UrlRewrite2 --source webpi
-cinst ARRv3_0 --source webpi
+# ---- IIS Extensions ----
+choco install urlrewrite
+choco install iis-arr
 
 # ---- Applications ----
-cinst git
-cinst python
-cinst nodejs-lts
-cinst yarn
-cinst nuget.commandline
-cinst 7zip
-cinst firefox -packageParameters "l=en-US"
-cinst googlechrome
-cinst notepadplusplus
-cinst vscode.install
-cinst linqpad
-cinst putty.install
-cinst winscp
-cinst redis-64
-cinst ruby
-cinst sql-server-management-studio
-cinst dotnetcore-sdk
-cinst dotnetcore-windowshosting
-cinst dotnet-sdk
-cinst dotnet-windowshosting
+choco install git
+choco install python
+choco install nodejs-lts
+choco install yarn
+choco install nuget.commandline
+choco install 7zip
+choco install firefox --params "/l:en-US"
+choco install googlechrome
+choco install notepadplusplus
+choco install vscode.install
+choco install linqpad
+choco install putty.install
+choco install winscp
+choco install redis-64
+choco install ruby
+choco install sql-server-management-studio
+choco install dotnetcore-sdk
+choco install dotnetcore-windowshosting
+choco install dotnet-sdk
+choco install dotnet-windowshosting
 
 refreshenv
 
@@ -55,13 +58,13 @@ Start-Process -FilePath "C:\vagrant\software\$($exe.Name)" -ArgumentList ('--wai
 
 # ---- ReSharper Ultimate ----
 # Commercial
-#cinst resharper
-#cinst resharpercpp
-#cinst dotcover
-#cinst dottrace
-#cinst dotmemory
+#choco install resharper
+#choco install resharpercpp
+#choco install dotcover
+#choco install dottrace
+#choco install dotmemory
 # Free
-cinst dotpeek
+choco install dotpeek
 
 choco feature disable -n=allowGlobalConfirmation
 
