@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
     v.vmx["ethernet0.virtualDev"] = "vmxnet3"
     v.vmx["scsi0.virtualDev"] = "lsisas1068"
     v.enable_vmrun_ip_lookup = false
-    v.whitelist_verified = true
+    v.allowlist_verified = true
   end
 
   config.vm.provider :virtualbox do |v, override|
