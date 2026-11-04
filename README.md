@@ -1,7 +1,7 @@
 # Visual Studio devbox for Vagrant
 
 [![CI](https://github.com/Baune8D/vagrant-vs-devbox/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Baune8D/vagrant-vs-devbox/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/github/license/Baune8D/vagrant-vs-devbox)](https://github.com/Baune8D/vagrant-vs-devbox/blob/main/LICENSE.txt)
+[![License: MIT](https://img.shields.io/github/license/Baune8D/vagrant-vs-devbox)](https://github.com/Baune8D/vagrant-vs-devbox/blob/main/LICENSE)
 
 A Vagrantfile that provisions a Windows 11 machine for .NET and web development: Visual Studio with every workload, IIS, the .NET SDK, Node.js, SQL Server Management Studio, VS Code and more, installed with Chocolatey.
 
@@ -48,4 +48,4 @@ In provisioning order:
 
 ## License
 
-[MIT](LICENSE.txt)
+[MIT](LICENSE)
